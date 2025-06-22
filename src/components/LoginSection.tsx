@@ -2,7 +2,55 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import LoadingScreen from './LoadingScreen';
+
+// Simple loading screen component for login transition
+const SimpleLoadingScreen = () => {
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  
+  const messages = [
+    "Checking your account status...",
+    "Verifying your credentials...",
+    "Checking your eligibility for the TK-Gesundheitsbonus...",
+    "Loading your account dashboard...",
+    "Finalizing your session..."
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMessageIndex((prev) => (prev + 1) % messages.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [messages.length]);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#eceae8]">
+      <div className="text-center">
+        <div className="flex justify-center space-x-2 mb-8">
+          {[0, 200, 400].map((delay, index) => (
+            <div 
+              key={index}
+              className="w-4 h-4 rounded-sm bg-[#009ee0] animate-bounce"
+              style={{ 
+                animationDelay: `${delay}ms`,
+                animationDuration: '1.4s'
+              }}
+            />
+          ))}
+        </div>
+        
+        <div className="h-12 flex items-center justify-center">
+          <p 
+            key={currentMessageIndex}
+            className="text-lg text-gray-700 font-medium animate-fade-in"
+          >
+            {messages[currentMessageIndex]}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const LoginSection = () => {
   const [versichertennummer, setVersichertennummer] = useState('');
@@ -29,7 +77,7 @@ const LoginSection = () => {
 
   // Show loading screen if login is in progress
   if (showLoadingScreen) {
-    return <LoadingScreen />;
+    return <SimpleLoadingScreen />;
   }
 
   return (
