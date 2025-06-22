@@ -61,10 +61,7 @@ const LoadingScreen = () => {
           <div className="h-12 flex items-center justify-center">
             <p 
               key={currentMessageIndex}
-              className="text-lg text-gray-700 animate-fade-in font-medium"
-              style={{
-                animation: 'fadeInOut 2s ease-in-out'
-              }}
+              className="text-lg text-gray-700 font-medium animate-fade-in"
             >
               {messages[currentMessageIndex]}
             </p>
@@ -73,15 +70,6 @@ const LoadingScreen = () => {
       </main>
       
       <Footer />
-      
-      <style jsx>{`
-        @keyframes fadeInOut {
-          0% { opacity: 0; transform: translateY(10px); }
-          20% { opacity: 1; transform: translateY(0); }
-          80% { opacity: 1; transform: translateY(0); }
-          100% { opacity: 0; transform: translateY(-10px); }
-        }
-      `}</style>
     </div>
   );
 };
