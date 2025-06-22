@@ -56,6 +56,20 @@ const LoginSection = () => {
                   <span className="group-hover:underline transition-all duration-200">Einloggen</span>
                   <ChevronRight className="transition-transform group-hover:translate-x-1" size={20} />
                 </button>
+                
+                {/* Desktop: Additional options below login button */}
+                <div className="space-y-4 pt-4">
+                  <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900">
+                    <ChevronRight size={16} className="mr-3 text-gray-500" />
+                    <span className="text-base">Passwort vergessen?</span>
+                  </div>
+                  <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900">
+                    <ChevronRight size={16} className="mr-3 text-gray-500" />
+                    <span className="text-base">
+                      Neu bei Meine TK? <span className="text-blue-600">Jetzt registrieren</span>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
             
@@ -136,7 +150,7 @@ const LoginSection = () => {
               </button>
               
               {/* Mobile: Additional options */}
-              <div className="space-y-4 pt-8">
+              <div className="space-y-4 pt-4">
                 <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900 py-3">
                   <ChevronRight size={20} className="mr-3 text-gray-500" />
                   <span className="text-lg">Passwort vergessen?</span>
