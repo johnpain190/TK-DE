@@ -45,7 +45,6 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-1 ml-auto">
-              <span className="text-gray-700 text-sm mr-6 font-medium">Login</span>
               <button className="p-2 text-gray-700 hover:text-gray-900">
                 <User size={22} />
               </button>
