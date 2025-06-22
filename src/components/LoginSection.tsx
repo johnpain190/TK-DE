@@ -74,7 +74,7 @@ const LoginSection = () => {
     // After loading completes, redirect to dashboard
     setIsLoading(false);
     setShowLoadingScreen(false);
-    navigate('/dashboard');
+    navigate('/dashboard', { replace: true });
   };
 
   // Show loading screen if login is in progress
