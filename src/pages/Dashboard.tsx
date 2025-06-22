@@ -1,23 +1,21 @@
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Euro } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 const Dashboard = () => {
-  const handleRedirect = () => {
-    window.open('https://site.com', '_blank');
-  };
+  const handleRedirect = useCallback(() => {
+    window.open('https://site.com', '_blank', 'noopener,noreferrer');
+  }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#eceae8' }}>
+    <div className="min-h-screen bg-[#eceae8]">
       <Header />
       
-      {/* Main Dashboard Content */}
       <main className="py-4 md:py-8">
         <div className="container mx-auto px-0 max-w-4xl">
-          {/* Page Header */}
           <div className="mb-6 md:mb-8 px-4 md:px-0">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
@@ -29,7 +27,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Account Balance Section - Full Width */}
           <div className="bg-white shadow-sm mb-6 w-full">
             <div className="p-4 md:p-6 border-b">
               <div className="text-sm text-gray-600 mb-2">Aktueller Kontostand</div>
@@ -45,7 +42,6 @@ const Dashboard = () => {
             <div className="p-4 md:p-6 w-full">
               <h3 className="font-medium text-gray-800 mb-4">Verfügbare Auszahlungen</h3>
               
-              {/* Health Bonus Section */}
               <div className="bg-green-50 border border-green-200 rounded-lg p-4 md:p-6 w-full">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
@@ -63,7 +59,7 @@ const Dashboard = () => {
                     </p>
                     <Button 
                       onClick={handleRedirect}
-                      className="bg-green-600 hover:bg-green-700 text-white px-4 md:px-6 py-2 text-sm md:text-base w-full md:w-auto"
+                      className="bg-green-600 hover:bg-green-700 text-white px-4 md:px-6 py-2 text-sm md:text-base w-full md:w-auto transition-colors"
                     >
                       Daten bestätigen und Auszahlung erhalten
                     </Button>
