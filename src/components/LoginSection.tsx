@@ -7,7 +7,7 @@ const LoginSection = () => {
   const [passwort, setPasswort] = useState('');
 
   return (
-    <section className="py-12 md:py-20" style={{ backgroundColor: '#eceae8' }}>
+    <section className="lg:py-12 lg:md:py-20" style={{ backgroundColor: '#eceae8' }}>
       <div className="container mx-auto px-4">
         {/* Desktop Layout */}
         <div className="hidden lg:block">
@@ -47,8 +47,13 @@ const LoginSection = () => {
                   Wo finde ich meine Zugangsdaten?
                 </a>
                 
-                <button className="w-full bg-gray-700 text-white py-4 md:py-4 px-6 md:px-6 hover:bg-gray-800 transition-colors flex items-center justify-between group font-normal text-base md:text-base">
-                  <span>Einloggen</span>
+                <button 
+                  className="w-full text-white py-4 md:py-4 px-6 md:px-6 transition-colors flex items-center justify-between group font-normal text-base md:text-base"
+                  style={{ backgroundColor: '#454542' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3a3937'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#454542'}
+                >
+                  <span className="group-hover:underline transition-all duration-200">Einloggen</span>
                   <ChevronRight className="transition-transform group-hover:translate-x-1" size={20} />
                 </button>
               </div>
@@ -85,7 +90,7 @@ const LoginSection = () => {
         </div>
 
         {/* Mobile Layout - Combined Single Box */}
-        <div className="lg:hidden max-w-lg mx-auto">
+        <div className="lg:hidden">
           <div className="bg-white p-6 shadow-sm">
             <h2 className="text-2xl font-normal mb-8 text-gray-800">Login mit Passwort</h2>
             
