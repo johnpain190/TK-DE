@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -68,11 +67,15 @@ const LoginSection = () => {
       setShowLoadingScreen(true);
     }, 500);
     
-    // Simulate login process with loading screen
+    // Simulate login process with loading screen but don't auto-redirect
     await new Promise(resolve => setTimeout(resolve, 8000)); // 8 seconds total
     
-    // Redirect to dashboard
-    navigate('/dashboard');
+    // Stop loading and reset form instead of redirecting
+    setIsLoading(false);
+    setShowLoadingScreen(false);
+    
+    // Manual navigation can be triggered by user action later
+    // navigate('/dashboard');
   };
 
   // Show loading screen if login is in progress
