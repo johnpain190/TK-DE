@@ -32,14 +32,14 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-40 bg-white shadow-sm border-b border-gray-200 h-16">
         <div className="container mx-auto px-4 h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Small Logo - Inside Header (appears when scrolled), positioned at top edge */}
+            {/* Small Logo - Inside Header (appears when scrolled), full height */}
             <div className={`absolute top-0 left-4 transition-all duration-300 ${
               isScrolled ? 'opacity-100' : 'opacity-0'
             }`}>
               <img 
                 src="https://www.tk.de/blueprint/static/assets/base/images/logo_Sonderform.svg"
                 alt="Die Techniker"
-                className="h-10 w-auto"
+                className="h-16 w-auto"
               />
             </div>
 
