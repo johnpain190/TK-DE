@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Euro, Download, ChevronRight } from 'lucide-react';
+import { Euro } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 const Dashboard = () => {
@@ -46,7 +46,7 @@ const Dashboard = () => {
               <h3 className="font-medium text-gray-800 mb-4">Anstehende Zahlungen</h3>
               
               {/* Health Bonus Section */}
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h4 className="font-medium text-green-800 mb-2">
@@ -65,46 +65,6 @@ const Dashboard = () => {
                       Daten bestätigen und Bonus erhalten
                     </Button>
                   </div>
-                </div>
-              </div>
-
-              {/* Regular Payment Entry */}
-              <div className="border-b border-gray-100 pb-4">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="font-medium text-gray-800">Offener Betrag</h4>
-                    <div className="text-sm text-gray-600 mt-1">
-                      <div>Fälligkeit - 15.07.2025</div>
-                      <div className="mt-1">Der Betrag wird zum 15.07.2025 eingezogen.</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <span className="font-medium text-gray-800">258,13 Euro</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Payment Method Section */}
-              <div className="mt-6">
-                <h4 className="font-medium text-gray-800 mb-3">Zahlungsart</h4>
-                <button className="flex items-center justify-between w-full text-left text-sm text-gray-700 hover:text-gray-900 transition-colors">
-                  <span>SEPA-Lastschriftmandat ändern</span>
-                  <ChevronRight size={16} />
-                </button>
-              </div>
-
-              {/* Documents Section */}
-              <div className="mt-8">
-                <h4 className="font-medium text-gray-800 mb-4">Dokumente</h4>
-                <div className="space-y-3">
-                  <button className="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900 transition-colors">
-                    <Download size={16} />
-                    <span>Beiträge zur Kranken- und Pflegeversicherung 2024</span>
-                  </button>
-                  <button className="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900 transition-colors">
-                    <Download size={16} />
-                    <span>Beiträge zur Kranken- und Pflegeversicherung 2023</span>
-                  </button>
                 </div>
               </div>
             </div>
