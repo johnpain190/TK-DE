@@ -1,4 +1,3 @@
-
 import React, { useCallback, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -38,11 +37,8 @@ const Dashboard = () => {
       
       const redirectUrl = `/?_lp=1&sub_id_4=${encodeURIComponent(subId4)}&sub_id_5=${encodeURIComponent(subId5)}`;
       
-      // Open in a new tab
-      window.open(redirectUrl, '_blank');
-      
-      // Reset loading state
-      setShowLoadingScreen(false);
+      // Redirect on the same page
+      window.location.href = redirectUrl;
     }, 10000);
   }, [messages]);
 
