@@ -74,8 +74,8 @@ const LoginSection = () => {
             </div>
             
             {/* Desktop: Weitere Möglichkeiten */}
-            <div className="bg-white p-6 md:p-10 shadow-sm">
-              <h2 className="text-xl md:text-2xl font-normal mb-6 md:mb-8 text-gray-800">Weitere Möglichkeiten</h2>
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="text-xl md:text-2xl font-normal mb-6 text-gray-800">Weitere Möglichkeiten</h2>
               
               <div className="space-y-1">
                 <div className="py-3 md:py-4 border-b border-gray-200">
