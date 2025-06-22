@@ -4,15 +4,16 @@ import { User, Search, Menu } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white shadow-sm border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* TK Logo */}
           <div className="flex items-center">
-            <div className="bg-blue-500 text-white px-4 py-2 rounded">
-              <div className="font-bold text-xl">TK</div>
-              <div className="text-xs">Die Techniker</div>
-            </div>
+            <img 
+              src="https://www.tk.de/blueprint/static/assets/base/images/logo_Sonderform.svg"
+              alt="Die Techniker"
+              className="h-8"
+            />
           </div>
 
           {/* Desktop Navigation */}
