@@ -28,10 +28,8 @@ const Header = () => {
         />
       </div>
 
-      {/* Header Bar */}
-      <header className={`fixed top-0 left-0 right-0 z-40 bg-white shadow-sm border-b border-gray-200 transition-all duration-300 ${
-        isScrolled ? 'h-16' : 'h-20 mt-16'
-      }`}>
+      {/* Header Bar - Fixed Height */}
+      <header className="fixed top-0 left-0 right-0 z-40 bg-white shadow-sm border-b border-gray-200 h-16">
         <div className="container mx-auto px-4 h-full">
           <div className="flex items-center justify-between h-full">
             {/* Small Logo - Inside Header (appears when scrolled) */}
@@ -70,9 +68,7 @@ const Header = () => {
       </header>
 
       {/* Spacer to prevent content from being hidden behind fixed header */}
-      <div className={`transition-all duration-300 ${
-        isScrolled ? 'h-16' : 'h-36'
-      }`} />
+      <div className="h-16" />
     </>
   );
 };

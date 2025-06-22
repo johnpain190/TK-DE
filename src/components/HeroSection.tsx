@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="bg-gray-50 py-8">
+    <section className="bg-gray-50 py-8 mt-16">
       <div className="container mx-auto px-4">
         <h1 className="text-5xl md:text-6xl font-light text-gray-800 text-center mb-8 tracking-wide">
           Meine TK
