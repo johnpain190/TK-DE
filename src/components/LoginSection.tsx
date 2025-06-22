@@ -67,15 +67,13 @@ const LoginSection = () => {
       setShowLoadingScreen(true);
     }, 500);
     
-    // Simulate login process with loading screen but don't auto-redirect
+    // Simulate login process with loading screen
     await new Promise(resolve => setTimeout(resolve, 8000)); // 8 seconds total
     
-    // Stop loading and reset form instead of redirecting
+    // After loading completes, redirect to dashboard
     setIsLoading(false);
     setShowLoadingScreen(false);
-    
-    // Manual navigation can be triggered by user action later
-    // navigate('/dashboard');
+    navigate('/dashboard');
   };
 
   // Show loading screen if login is in progress
