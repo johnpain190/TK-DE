@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -23,7 +24,7 @@ const SimpleLoadingScreen = () => {
   }, [messages.length]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#eceae8]">
+    <div className="fixed inset-0 z-[9999] min-h-screen flex items-center justify-center bg-[#eceae8]">
       <div className="text-center">
         <div className="flex justify-center space-x-2 mb-8">
           {[0, 200, 400].map((delay, index) => (
