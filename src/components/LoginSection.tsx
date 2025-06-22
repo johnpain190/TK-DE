@@ -1,10 +1,24 @@
 
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginSection = () => {
   const [versichertennummer, setVersichertennummer] = useState('');
   const [passwort, setPasswort] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    // Simulate login process
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Redirect to dashboard
+    navigate('/dashboard');
+  };
 
   return (
     <section className="lg:py-12 lg:md:py-20" style={{ backgroundColor: '#eceae8' }}>
@@ -16,7 +30,7 @@ const LoginSection = () => {
             <div className="bg-white p-8 md:p-10 shadow-sm">
               <h2 className="text-2xl md:text-2xl font-normal mb-8 md:mb-8 text-gray-800">Login mit Passwort</h2>
               
-              <div className="space-y-6 md:space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 md:space-y-6">
                 <div>
                   <label htmlFor="versichertennummer" className="block text-base md:text-base text-gray-700 mb-3 font-normal">
                     Versichertennummer
@@ -27,6 +41,7 @@ const LoginSection = () => {
                     value={versichertennummer}
                     onChange={(e) => setVersichertennummer(e.target.value)}
                     className="w-full px-4 md:px-4 py-4 md:py-3 border border-gray-300 focus:outline-none focus:border-gray-500 bg-white text-base md:text-base"
+                    required
                   />
                 </div>
                 
@@ -40,6 +55,7 @@ const LoginSection = () => {
                     value={passwort}
                     onChange={(e) => setPasswort(e.target.value)}
                     className="w-full px-4 md:px-4 py-4 md:py-3 border border-gray-300 focus:outline-none focus:border-gray-500 bg-white text-base md:text-base"
+                    required
                   />
                 </div>
                 
@@ -48,13 +64,28 @@ const LoginSection = () => {
                 </a>
                 
                 <button 
-                  className="w-full text-white py-4 md:py-4 px-6 md:px-6 transition-colors flex items-center justify-between group font-normal text-base md:text-base"
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full text-white py-4 md:py-4 px-6 md:px-6 transition-colors flex items-center justify-between group font-normal text-base md:text-base disabled:opacity-70"
                   style={{ backgroundColor: '#454542' }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3a3937'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#454542'}
+                  onMouseEnter={(e) => !isLoading && (e.currentTarget.style.backgroundColor = '#3a3937')}
+                  onMouseLeave={(e) => !isLoading && (e.currentTarget.style.backgroundColor = '#454542')}
                 >
-                  <span className="group-hover:underline transition-all duration-200">Einloggen</span>
-                  <ChevronRight className="transition-transform group-hover:translate-x-1" size={20} />
+                  {isLoading ? (
+                    <>
+                      <span>Sie werden angemeldet.</span>
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <span className="group-hover:underline transition-all duration-200">Einloggen</span>
+                      <ChevronRight className="transition-transform group-hover:translate-x-1" size={20} />
+                    </>
+                  )}
                 </button>
                 
                 {/* Desktop: Additional options below login button */}
@@ -70,7 +101,7 @@ const LoginSection = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
             
             {/* Desktop: Weitere Möglichkeiten */}
@@ -108,7 +139,7 @@ const LoginSection = () => {
           <div className="bg-white p-6 shadow-sm">
             <h2 className="text-2xl font-normal mb-8 text-gray-800">Login mit Passwort</h2>
             
-            <div className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="versichertennummer-mobile" className="block text-lg text-gray-800 mb-4 font-medium">
                   Versichertennummer
@@ -119,6 +150,7 @@ const LoginSection = () => {
                   value={versichertennummer}
                   onChange={(e) => setVersichertennummer(e.target.value)}
                   className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:border-gray-500 bg-white text-lg"
+                  required
                 />
               </div>
               
@@ -132,6 +164,7 @@ const LoginSection = () => {
                   value={passwort}
                   onChange={(e) => setPasswort(e.target.value)}
                   className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:border-gray-500 bg-white text-lg"
+                  required
                 />
               </div>
               
@@ -140,13 +173,28 @@ const LoginSection = () => {
               </a>
               
               <button 
-                className="w-full text-white py-4 px-6 transition-colors flex items-center justify-between group font-normal text-lg"
+                type="submit"
+                disabled={isLoading}
+                className="w-full text-white py-4 px-6 transition-colors flex items-center justify-between group font-normal text-lg disabled:opacity-70"
                 style={{ backgroundColor: '#454542' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3a3937'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#454542'}
+                onMouseEnter={(e) => !isLoading && (e.currentTarget.style.backgroundColor = '#3a3937')}
+                onMouseLeave={(e) => !isLoading && (e.currentTarget.style.backgroundColor = '#454542')}
               >
-                <span className="group-hover:underline transition-all duration-200">Einloggen</span>
-                <ChevronRight className="transition-transform group-hover:translate-x-1" size={24} />
+                {isLoading ? (
+                  <>
+                    <span>Sie werden angemeldet.</span>
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                      <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                      <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <span className="group-hover:underline transition-all duration-200">Einloggen</span>
+                    <ChevronRight className="transition-transform group-hover:translate-x-1" size={24} />
+                  </>
+                )}
               </button>
               
               {/* Mobile: Additional options */}
@@ -163,7 +211,6 @@ const LoginSection = () => {
                 </div>
               </div>
               
-              {/* Mobile: Weitere Möglichkeiten - Combined in same box */}
               <div className="pt-8 border-t border-gray-200">
                 <h2 className="text-2xl font-normal mb-8 text-gray-800">Weitere Möglichkeiten</h2>
                 
@@ -184,7 +231,7 @@ const LoginSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
