@@ -13,7 +13,7 @@ const HeroSection = () => {
       {/* Full width banner */}
       <div className="w-full h-64 md:h-80 relative overflow-hidden">
         <img 
-          src="/lovable-uploads/96594203-4e23-4745-9e03-7b25445d14eb.png"
+          src="https://www.tk.de/resource/image/2116170/10x2/1680/336/60edd37e173249dc7d960098db164bad/A5A5FFE73E65B8B709A5428771F9815C/web-tk-app-startseite-divers.jpg"
           alt="TK Banner"
           className="w-full h-full object-cover"
         />
