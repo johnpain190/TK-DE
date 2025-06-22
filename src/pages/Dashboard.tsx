@@ -16,7 +16,7 @@ const Dashboard = () => {
       
       {/* Main Dashboard Content */}
       <main className="py-4 md:py-8">
-        <div className="container mx-auto px-0 md:px-4 max-w-4xl">
+        <div className="container mx-auto px-0 max-w-4xl">
           {/* Page Header */}
           <div className="mb-6 md:mb-8 px-4 md:px-0">
             <div className="flex items-center gap-3 mb-4">
