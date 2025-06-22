@@ -12,12 +12,13 @@ const Header = () => {
             <img 
               src="https://www.tk.de/blueprint/static/assets/base/images/logo_Sonderform.svg"
               alt="Die Techniker"
-              className="h-8"
+              className="h-12"
             />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2">
+            <span className="text-gray-600 text-sm mr-4">Login</span>
             <button className="p-2 text-gray-600 hover:text-gray-800">
               <User size={20} />
             </button>
