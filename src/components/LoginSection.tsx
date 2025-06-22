@@ -84,7 +84,7 @@ const LoginSection = () => {
           </div>
         </div>
 
-        {/* Mobile Layout - Single Column */}
+        {/* Mobile Layout - Combined Single Box */}
         <div className="lg:hidden max-w-lg mx-auto">
           <div className="bg-white p-6 shadow-sm">
             <h2 className="text-2xl font-normal mb-8 text-gray-800">Login mit Passwort</h2>
@@ -120,8 +120,13 @@ const LoginSection = () => {
                 Wo finde ich meine Zugangsdaten?
               </a>
               
-              <button className="w-full bg-gray-700 text-white py-4 px-6 hover:bg-gray-800 transition-colors flex items-center justify-between group font-normal text-lg">
-                <span>Einloggen</span>
+              <button 
+                className="w-full text-white py-4 px-6 transition-colors flex items-center justify-between group font-normal text-lg"
+                style={{ backgroundColor: '#454542' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3a3937'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#454542'}
+              >
+                <span className="group-hover:underline transition-all duration-200">Einloggen</span>
                 <ChevronRight className="transition-transform group-hover:translate-x-1" size={24} />
               </button>
               
@@ -138,27 +143,27 @@ const LoginSection = () => {
                   </span>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          {/* Mobile: Weitere Möglichkeiten */}
-          <div className="bg-white p-6 shadow-sm mt-8">
-            <h2 className="text-2xl font-normal mb-8 text-gray-800">Weitere Möglichkeiten</h2>
-            
-            <div className="space-y-4">
-              <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900 py-3">
-                <ChevronRight size={20} className="mr-3 text-gray-500" />
-                <span className="text-lg">Freischaltcode per Post erhalten?</span>
-              </div>
               
-              <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900 py-3">
-                <ChevronRight size={20} className="mr-3 text-gray-500" />
-                <span className="text-lg">Einmal-Kennwort per Post erhalten?</span>
-              </div>
-              
-              <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900 py-3">
-                <ChevronRight size={20} className="mr-3 text-gray-500" />
-                <span className="text-lg">Mitgliedschaftsantrag: Status einsehen</span>
+              {/* Mobile: Weitere Möglichkeiten - Combined in same box */}
+              <div className="pt-8 border-t border-gray-200">
+                <h2 className="text-2xl font-normal mb-8 text-gray-800">Weitere Möglichkeiten</h2>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900 py-3">
+                    <ChevronRight size={20} className="mr-3 text-gray-500" />
+                    <span className="text-lg">Freischaltcode per Post erhalten?</span>
+                  </div>
+                  
+                  <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900 py-3">
+                    <ChevronRight size={20} className="mr-3 text-gray-500" />
+                    <span className="text-lg">Einmal-Kennwort per Post erhalten?</span>
+                  </div>
+                  
+                  <div className="flex items-center text-gray-700 cursor-pointer hover:text-gray-900 py-3">
+                    <ChevronRight size={20} className="mr-3 text-gray-500" />
+                    <span className="text-lg">Mitgliedschaftsantrag: Status einsehen</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
