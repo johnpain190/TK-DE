@@ -74,27 +74,27 @@ const LoginSection = () => {
             </div>
             
             {/* Desktop: Weitere Möglichkeiten */}
-            <div className="bg-white p-4 shadow-sm">
-              <h2 className="text-xl font-normal mb-4 text-gray-800">Weitere Möglichkeiten</h2>
+            <div className="bg-white p-3 shadow-sm max-w-sm">
+              <h2 className="text-lg font-normal mb-3 text-gray-800">Weitere Möglichkeiten</h2>
               
               <div className="space-y-0">
-                <div className="py-2 border-b border-gray-200">
-                  <span className="text-gray-700 text-sm flex items-center cursor-pointer hover:text-gray-900">
-                    <ChevronRight size={14} className="mr-2 text-gray-500" />
+                <div className="py-1.5 border-b border-gray-200">
+                  <span className="text-gray-700 text-xs flex items-center cursor-pointer hover:text-gray-900">
+                    <ChevronRight size={12} className="mr-1.5 text-gray-500" />
                     Freischaltcode per Post erhalten?
                   </span>
                 </div>
                 
-                <div className="py-2 border-b border-gray-200">
-                  <span className="text-gray-700 text-sm flex items-center cursor-pointer hover:text-gray-900">
-                    <ChevronRight size={14} className="mr-2 text-gray-500" />
+                <div className="py-1.5 border-b border-gray-200">
+                  <span className="text-gray-700 text-xs flex items-center cursor-pointer hover:text-gray-900">
+                    <ChevronRight size={12} className="mr-1.5 text-gray-500" />
                     Einmal-Kennwort per Post erhalten?
                   </span>
                 </div>
                 
-                <div className="py-2">
-                  <span className="text-gray-700 text-sm flex items-center cursor-pointer hover:text-gray-900">
-                    <ChevronRight size={14} className="mr-2 text-gray-500" />
+                <div className="py-1.5">
+                  <span className="text-gray-700 text-xs flex items-center cursor-pointer hover:text-gray-900">
+                    <ChevronRight size={12} className="mr-1.5 text-gray-500" />
                     Mitgliedschaftsantrag: Status einsehen
                   </span>
                 </div>
