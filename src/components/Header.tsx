@@ -32,8 +32,8 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-40 bg-white shadow-sm border-b border-gray-200 h-16">
         <div className="container mx-auto px-4 h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Small Logo - Inside Header (appears when scrolled), no padding */}
-            <div className={`transition-all duration-300 ${
+            {/* Small Logo - Inside Header (appears when scrolled), positioned at top edge */}
+            <div className={`absolute top-0 left-4 transition-all duration-300 ${
               isScrolled ? 'opacity-100' : 'opacity-0'
             }`}>
               <img 
@@ -44,7 +44,7 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex items-center space-x-1 ml-auto">
               <span className="text-gray-700 text-sm mr-6 font-medium">Login</span>
               <button className="p-2 text-gray-700 hover:text-gray-900">
                 <User size={22} />
@@ -58,7 +58,7 @@ const Header = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            <div className="md:hidden ml-auto">
               <button className="p-2 text-gray-700 hover:text-gray-900">
                 <Menu size={22} />
               </button>
