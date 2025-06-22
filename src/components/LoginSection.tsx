@@ -2,23 +2,35 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import LoadingScreen from './LoadingScreen';
 
 const LoginSection = () => {
   const [versichertennummer, setVersichertennummer] = useState('');
   const [passwort, setPasswort] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showLoadingScreen, setShowLoadingScreen] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate login process
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Show the loading screen after a brief moment
+    setTimeout(() => {
+      setShowLoadingScreen(true);
+    }, 500);
+    
+    // Simulate login process with loading screen
+    await new Promise(resolve => setTimeout(resolve, 8000)); // 8 seconds total
     
     // Redirect to dashboard
     navigate('/dashboard');
   };
+
+  // Show loading screen if login is in progress
+  if (showLoadingScreen) {
+    return <LoadingScreen />;
+  }
 
   return (
     <section className="lg:py-12 lg:md:py-20" style={{ backgroundColor: '#eceae8' }}>
