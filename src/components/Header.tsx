@@ -32,8 +32,8 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-40 bg-white shadow-sm border-b border-gray-200 h-16">
         <div className="container mx-auto px-4 h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Small Logo - Inside Header (appears when scrolled), sticking to top */}
-            <div className={`flex items-start transition-all duration-300 ${
+            {/* Small Logo - Inside Header (appears when scrolled), no padding */}
+            <div className={`transition-all duration-300 ${
               isScrolled ? 'opacity-100' : 'opacity-0'
             }`}>
               <img 
