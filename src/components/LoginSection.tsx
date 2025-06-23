@@ -151,14 +151,6 @@ const LoginSection = () => {
                       </p>
                     </div>
                     
-                    <div className="flex justify-center my-8">
-                      <img 
-                        src="https://www.tk.de/resource/blob/2065884/a6f35b860944d1c4c8b59d9fcb3fe0bd/versichertenkarte-data.png" 
-                        alt="Gesundheitskarte mit markierter Versichertennummer" 
-                        className="max-w-sm h-auto"
-                      />
-                    </div>
-                    
                     <div className="space-y-6">
                       <h3 className="text-xl font-normal text-gray-800">
                         Mein Login funktioniert nicht. Woran könnte es liegen?
@@ -315,14 +307,6 @@ const LoginSection = () => {
                     <p className="leading-relaxed">
                       <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
                     </p>
-                  </div>
-                  
-                  <div className="flex justify-center my-6">
-                    <img 
-                      src="https://www.tk.de/resource/blob/2065884/a6f35b860944d1c4c8b59d9fcb3fe0bd/versichertenkarte-data.png" 
-                      alt="Gesundheitskarte mit markierter Versichertennummer" 
-                      className="max-w-full h-auto"
-                    />
                   </div>
                   
                   <div className="space-y-4">
