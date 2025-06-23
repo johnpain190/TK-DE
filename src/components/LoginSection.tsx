@@ -7,6 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogDescription,
 } from './ui/dialog';
 
 // Simple loading screen component for login transition
@@ -134,22 +135,21 @@ const LoginSection = () => {
                       Wo finde ich meine Zugangsdaten?
                     </button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white border-0 shadow-2xl">
+                  <DialogContent>
                     <DialogHeader>
                       <DialogTitle className="text-2xl font-normal text-gray-800 mb-8">
                         Wo finde ich meine Zugangsdaten?
                       </DialogTitle>
+                      <DialogDescription className="space-y-6 text-gray-700">
+                        <p className="leading-relaxed">
+                          <span className="font-medium">1.</span> Die 10-stellige Versichertennummer finden Sie auf Ihrer Gesundheitskarte, sie beginnt mit einem Buchstaben.
+                        </p>
+                        
+                        <p className="leading-relaxed">
+                          <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
+                        </p>
+                      </DialogDescription>
                     </DialogHeader>
-                    
-                    <div className="space-y-6 text-gray-700">
-                      <p className="leading-relaxed">
-                        <span className="font-medium">1.</span> Die 10-stellige Versichertennummer finden Sie auf Ihrer Gesundheitskarte, sie beginnt mit einem Buchstaben.
-                      </p>
-                      
-                      <p className="leading-relaxed">
-                        <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
-                      </p>
-                    </div>
                     
                     <div className="flex justify-center my-8">
                       <img 
@@ -300,22 +300,21 @@ const LoginSection = () => {
                     Wo finde ich meine Zugangsdaten?
                   </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-[95vw] w-full max-h-[90vh] overflow-y-auto mx-4 bg-white border-0 shadow-2xl">
+                <DialogContent>
                   <DialogHeader>
                     <DialogTitle className="text-lg font-normal text-gray-800 mb-6">
                       Wo finde ich meine Zugangsdaten?
                     </DialogTitle>
+                    <DialogDescription className="space-y-4 text-gray-700 text-sm">
+                      <p className="leading-relaxed">
+                        <span className="font-medium">1.</span> Die 10-stellige Versichertennummer finden Sie auf Ihrer Gesundheitskarte, sie beginnt mit einem Buchstaben.
+                      </p>
+                      
+                      <p className="leading-relaxed">
+                        <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
+                      </p>
+                    </DialogDescription>
                   </DialogHeader>
-                  
-                  <div className="space-y-4 text-gray-700 text-sm">
-                    <p className="leading-relaxed">
-                      <span className="font-medium">1.</span> Die 10-stellige Versichertennummer finden Sie auf Ihrer Gesundheitskarte, sie beginnt mit einem Buchstaben.
-                    </p>
-                    
-                    <p className="leading-relaxed">
-                      <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
-                    </p>
-                  </div>
                   
                   <div className="flex justify-center my-6">
                     <img 
