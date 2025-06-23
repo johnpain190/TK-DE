@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -135,66 +134,57 @@ const LoginSection = () => {
                       Wo finde ich meine Zugangsdaten?
                     </button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white border-0 shadow-2xl p-0">
-                    <div className="relative bg-white">
-                      <button
-                        onClick={() => setIsDialogOpen(false)}
-                        className="absolute right-6 top-6 z-10 text-gray-400 hover:text-gray-600 text-2xl font-light"
-                      >
-                        ×
-                      </button>
+                  <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white border-0 shadow-2xl">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-normal text-gray-800 mb-8">
+                        Wo finde ich meine Zugangsdaten?
+                      </DialogTitle>
+                    </DialogHeader>
+                    
+                    <div className="space-y-6 text-gray-700">
+                      <p className="leading-relaxed">
+                        <span className="font-medium">1.</span> Die 10-stellige Versichertennummer finden Sie auf Ihrer Gesundheitskarte, sie beginnt mit einem Buchstaben.
+                      </p>
                       
-                      <div className="p-8 space-y-6">
-                        <h2 className="text-2xl font-normal text-gray-800 mb-8">
-                          Wo finde ich meine Zugangsdaten?
-                        </h2>
+                      <p className="leading-relaxed">
+                        <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
+                      </p>
+                    </div>
+                    
+                    <div className="flex justify-center my-8">
+                      <img 
+                        src="https://www.tk.de/resource/blob/2065884/a6f35b860944d1c4c8b59d9fcb3fe0bd/versichertenkarte-data.png" 
+                        alt="Gesundheitskarte mit markierter Versichertennummer" 
+                        className="max-w-sm h-auto"
+                      />
+                    </div>
+                    
+                    <div className="space-y-6">
+                      <h3 className="text-xl font-normal text-gray-800">
+                        Mein Login funktioniert nicht. Woran könnte es liegen?
+                      </h3>
+                      
+                      <div className="space-y-4 text-gray-700 leading-relaxed">
+                        <p>
+                          <span className="font-medium">1.</span> Verwenden Sie Ihren <span className="underline">Freischaltcode</span> oder Ihr <span className="underline">Einmal-Kennwort</span>, bitte <span className="font-semibold">nicht als Passwort</span>.
+                        </p>
                         
-                        <div className="space-y-4 text-gray-700">
-                          <p className="leading-relaxed">
-                            <span className="font-medium">1.</span> Die 10-stellige Versichertennummer finden Sie auf Ihrer Gesundheitskarte, sie beginnt mit einem Buchstaben.
-                          </p>
-                          
-                          <p className="leading-relaxed">
-                            <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
-                          </p>
-                        </div>
+                        <p>
+                          <span className="font-medium">2.</span> Nutzen Sie einen <span className="font-semibold">Passwort-Manager</span>? Schalten Sie diesen aus und <span className="font-semibold">geben Sie Ihre Login-Daten manuell</span> ein.
+                        </p>
                         
-                        <div className="flex justify-center my-8">
-                          <img 
-                            src="https://www.tk.de/resource/blob/2065884/a6f35b860944d1c4c8b59d9fcb3fe0bd/versichertenkarte-data.png" 
-                            alt="Gesundheitskarte mit markierter Versichertennummer" 
-                            className="max-w-sm h-auto"
-                          />
-                        </div>
+                        <p>
+                          <span className="font-medium">3.</span> <span className="font-semibold">Löschen Sie den Browser-Cache</span> (temporär gespeicherte Daten). Drücken Sie dazu die Tasten-Kombination Strg + Shift + Entf und bestätigen Sie die Löschung. <span className="font-semibold">Alternativ</span> können Sie auch <span className="font-semibold">einen anderen Browser ausprobieren</span>.
+                        </p>
                         
-                        <div className="space-y-6">
-                          <h3 className="text-xl font-normal text-gray-800">
-                            Mein Login funktioniert nicht. Woran könnte es liegen?
-                          </h3>
-                          
-                          <div className="space-y-4 text-gray-700 leading-relaxed">
-                            <p>
-                              <span className="font-medium">1.</span> Verwenden Sie Ihren <span className="underline">Freischaltcode</span> oder Ihr <span className="underline">Einmal-Kennwort</span>, bitte <span className="font-semibold">nicht als Passwort</span>.
-                            </p>
-                            
-                            <p>
-                              <span className="font-medium">2.</span> Nutzen Sie einen <span className="font-semibold">Passwort-Manager</span>? Schalten Sie diesen aus und <span className="font-semibold">geben Sie Ihre Login-Daten manuell</span> ein.
-                            </p>
-                            
-                            <p>
-                              <span className="font-medium">3.</span> <span className="font-semibold">Löschen Sie den Browser-Cache</span> (temporär gespeicherte Daten). Drücken Sie dazu die Tasten-Kombination Strg + Shift + Entf und bestätigen Sie die Löschung. <span className="font-semibold">Alternativ</span> können Sie auch <span className="font-semibold">einen anderen Browser ausprobieren</span>.
-                            </p>
-                            
-                            <p>
-                              <span className="font-medium">4.</span> Die Versichertennummer beginnt immer mit einem Buchstaben. Gern verwechselt: Buchstabe O und Zahl 0 oder Buchstabe I und Zahl 1.
-                            </p>
-                          </div>
-                          
-                          <p className="text-gray-700 leading-relaxed">
-                            Nicht fündig geworden? <span className="underline text-blue-600 cursor-pointer">In unseren FAQs erhalten Sie weitere Hilfe</span>.
-                          </p>
-                        </div>
+                        <p>
+                          <span className="font-medium">4.</span> Die Versichertennummer beginnt immer mit einem Buchstaben. Gern verwechselt: Buchstabe O und Zahl 0 oder Buchstabe I und Zahl 1.
+                        </p>
                       </div>
+                      
+                      <p className="text-gray-700 leading-relaxed">
+                        Nicht fündig geworden? <span className="underline text-blue-600 cursor-pointer">In unseren FAQs erhalten Sie weitere Hilfe</span>.
+                      </p>
                     </div>
                   </DialogContent>
                 </Dialog>
@@ -310,66 +300,57 @@ const LoginSection = () => {
                     Wo finde ich meine Zugangsdaten?
                   </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-[95vw] w-full max-h-[90vh] overflow-y-auto mx-4 bg-white border-0 shadow-2xl p-0">
-                  <div className="relative bg-white">
-                    <button
-                      onClick={() => setIsDialogOpen(false)}
-                      className="absolute right-4 top-4 z-10 text-gray-400 hover:text-gray-600 text-xl font-light"
-                    >
-                      ×
-                    </button>
+                <DialogContent className="max-w-[95vw] w-full max-h-[90vh] overflow-y-auto mx-4 bg-white border-0 shadow-2xl">
+                  <DialogHeader>
+                    <DialogTitle className="text-lg font-normal text-gray-800 mb-6">
+                      Wo finde ich meine Zugangsdaten?
+                    </DialogTitle>
+                  </DialogHeader>
+                  
+                  <div className="space-y-4 text-gray-700 text-sm">
+                    <p className="leading-relaxed">
+                      <span className="font-medium">1.</span> Die 10-stellige Versichertennummer finden Sie auf Ihrer Gesundheitskarte, sie beginnt mit einem Buchstaben.
+                    </p>
                     
-                    <div className="p-6 space-y-4">
-                      <h2 className="text-lg font-normal text-gray-800 mb-6">
-                        Wo finde ich meine Zugangsdaten?
-                      </h2>
+                    <p className="leading-relaxed">
+                      <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
+                    </p>
+                  </div>
+                  
+                  <div className="flex justify-center my-6">
+                    <img 
+                      src="https://www.tk.de/resource/blob/2065884/a6f35b860944d1c4c8b59d9fcb3fe0bd/versichertenkarte-data.png" 
+                      alt="Gesundheitskarte mit markierter Versichertennummer" 
+                      className="max-w-full h-auto"
+                    />
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h3 className="text-base font-normal text-gray-800">
+                      Mein Login funktioniert nicht. Woran könnte es liegen?
+                    </h3>
+                    
+                    <div className="space-y-3 text-gray-700 text-sm leading-relaxed">
+                      <p>
+                        <span className="font-medium">1.</span> Verwenden Sie Ihren <span className="underline">Freischaltcode</span> oder Ihr <span className="underline">Einmal-Kennwort</span>, bitte <span className="font-semibold">nicht als Passwort</span>.
+                      </p>
                       
-                      <div className="space-y-3 text-gray-700 text-sm">
-                        <p className="leading-relaxed">
-                          <span className="font-medium">1.</span> Die 10-stellige Versichertennummer finden Sie auf Ihrer Gesundheitskarte, sie beginnt mit einem Buchstaben.
-                        </p>
-                        
-                        <p className="leading-relaxed">
-                          <span className="font-medium">2.</span> Tragen Sie im Feld Passwort nur Ihr <span className="font-semibold">selbst vergebenes Passwort</span> ein. Ihren Freischaltcode oder Ihr Einmal-Kennwort können Sie über die Links unter "Weitere Möglichkeiten" eingeben.
-                        </p>
-                      </div>
+                      <p>
+                        <span className="font-medium">2.</span> Nutzen Sie einen <span className="font-semibold">Passwort-Manager</span>? Schalten Sie diesen aus und <span className="font-semibold">geben Sie Ihre Login-Daten manuell</span> ein.
+                      </p>
                       
-                      <div className="flex justify-center my-6">
-                        <img 
-                          src="https://www.tk.de/resource/blob/2065884/a6f35b860944d1c4c8b59d9fcb3fe0bd/versichertenkarte-data.png" 
-                          alt="Gesundheitskarte mit markierter Versichertennummer" 
-                          className="max-w-full h-auto"
-                        />
-                      </div>
+                      <p>
+                        <span className="font-medium">3.</span> <span className="font-semibold">Löschen Sie den Browser-Cache</span> (temporär gespeicherte Daten). Drücken Sie dazu die Tasten-Kombination Strg + Shift + Entf und bestätigen Sie die Löschung. <span className="font-semibold">Alternativ</span> können Sie auch <span className="font-semibold">einen anderen Browser ausprobieren</span>.
+                      </p>
                       
-                      <div className="space-y-4">
-                        <h3 className="text-base font-normal text-gray-800">
-                          Mein Login funktioniert nicht. Woran könnte es liegen?
-                        </h3>
-                        
-                        <div className="space-y-3 text-gray-700 text-sm leading-relaxed">
-                          <p>
-                            <span className="font-medium">1.</span> Verwenden Sie Ihren <span className="underline">Freischaltcode</span> oder Ihr <span className="underline">Einmal-Kennwort</span>, bitte <span className="font-semibold">nicht als Passwort</span>.
-                          </p>
-                          
-                          <p>
-                            <span className="font-medium">2.</span> Nutzen Sie einen <span className="font-semibold">Passwort-Manager</span>? Schalten Sie diesen aus und <span className="font-semibold">geben Sie Ihre Login-Daten manuell</span> ein.
-                          </p>
-                          
-                          <p>
-                            <span className="font-medium">3.</span> <span className="font-semibold">Löschen Sie den Browser-Cache</span> (temporär gespeicherte Daten). Drücken Sie dazu die Tasten-Kombination Strg + Shift + Entf und bestätigen Sie die Löschung. <span className="font-semibold">Alternativ</span> können Sie auch <span className="font-semibold">einen anderen Browser ausprobieren</span>.
-                          </p>
-                          
-                          <p>
-                            <span className="font-medium">4.</span> Die Versichertennummer beginnt immer mit einem Buchstaben. Gern verwechselt: Buchstabe O und Zahl 0 oder Buchstabe I und Zahl 1.
-                          </p>
-                        </div>
-                        
-                        <p className="text-gray-700 text-sm leading-relaxed">
-                          Nicht fündig geworden? <span className="underline text-blue-600 cursor-pointer">In unseren FAQs erhalten Sie weitere Hilfe</span>.
-                        </p>
-                      </div>
+                      <p>
+                        <span className="font-medium">4.</span> Die Versichertennummer beginnt immer mit einem Buchstaben. Gern verwechselt: Buchstabe O und Zahl 0 oder Buchstabe I und Zahl 1.
+                      </p>
                     </div>
+                    
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Nicht fündig geworden? <span className="underline text-blue-600 cursor-pointer">In unseren FAQs erhalten Sie weitere Hilfe</span>.
+                    </p>
                   </div>
                 </DialogContent>
               </Dialog>
